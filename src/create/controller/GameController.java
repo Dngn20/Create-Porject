@@ -1,6 +1,6 @@
 package create.controller;
 
-public class CreateController 
+public class GameController 
 {
 	public void start()
 	{
