@@ -9,10 +9,23 @@ public class CreateFrame extends JFrame
 	private GameController baseController;
 	private CreatePanel appPanel;
 
-	public Createframe(GameController baseController)
+	public CreateFrame(GameController baseController)
 	{
+		super();
+		this.baseController = baseController;
+		this.appPanel = new CreatePanel(baseController);
 		
+		setupFrame();
 	}
 	
+	private void setupFrame()
+	{
+		this.setContentPane(appPanel);
+		this.setSize(new Dimension (900, 600));
+		this.setTitle("The Simple Games");
+		this.setSize(new Dimension(900, 600));
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
 
 }
