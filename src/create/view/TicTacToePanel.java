@@ -30,7 +30,7 @@ public class TicTacToePanel extends JPanel
 	private JScrollPane TTTPane;
 	
 	
-	
+	//OPENING OF THE PROGRAM IS NICE BUT THE BLUE IS A LITTLE MUCH I THINK...
 	
 	
 	public TicTacToePanel(GameController baseController)
@@ -46,18 +46,19 @@ public class TicTacToePanel extends JPanel
 		this.enter = new JButton("Enter");
 		this.titleLabel= new JLabel("tIctAcToE");
 		
-		
+		// GOOD CODE RIGHT HERE
 		setupListeners();
 		setupTable();
 		setupPanel();
 		setupLayout();
-	}
+	}		// GOOD CODE RIGHT HERE
 	
 	private void setupListeners()
 	{
-		
+		// ARN'T THE SETUP LISTENERS SUPPOSED TO BE AFTER THE SETUP PANEL AND LAYOUT?
+		// THE BUTTONS DON'T DO ANYTHING YET
 	}
-	
+	// GOOD CODE RIGHT HERE
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
@@ -67,14 +68,14 @@ public class TicTacToePanel extends JPanel
 		titleLabel.setFont(new Font("Malayalam MN", Font.PLAIN, 50));
 		
 		this.add(titleLabel);
-		this.add(enter);
+		this.add(enter);		// GOOD CODE RIGHT HERE
 		this.add(rowLabel);
 		this.add(columnLabel);
 		this.add(rowInput);
 		this.add(enter);
 		this.add(colInput);
 	}
-
+	// GOOD CODE RIGHT HERE
 
 	public void setupLayout()
 	{
@@ -87,11 +88,11 @@ public class TicTacToePanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, colInput, 3, SpringLayout.SOUTH, columnLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, enter, 66, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, enter, -79, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, columnLabel, 120, SpringLayout.SOUTH, titleLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, columnLabel, 120, SpringLayout.SOUTH, titleLabel);		// GOOD CODE RIGHT HERE
 		baseLayout.putConstraint(SpringLayout.NORTH, titleLabel, 34, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 10, SpringLayout.WEST, this);
 	}
-
+	// GOOD CODE RIGHT HERE
 	public void setupTable()
 	{
 		

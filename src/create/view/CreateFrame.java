@@ -26,6 +26,7 @@ public class CreateFrame extends JFrame
 		this.setSize(new Dimension(900, 600));
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+		// GOOD CODE RIGHT HERE
 	}
 
 }

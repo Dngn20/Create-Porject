@@ -78,10 +78,10 @@ public class RockPaperScissorPanel extends JPanel
 		this.add(ScissorsButton);
 		this.add(PaperButton);
 		this.add(gameLabel);
-	}
+	}		// GOOD CODE RIGHT HERE
 	
 
-
+	// GOOD CODE RIGHT HERE
 	public void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, RockButton, 99, SpringLayout.WEST, this);
@@ -100,7 +100,7 @@ public class RockPaperScissorPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, scissorLabel, -140, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, welcomeLabel, 1, SpringLayout.SOUTH, gameLabel);
 		baseLayout.putConstraint(SpringLayout.EAST, welcomeLabel, -291, SpringLayout.EAST, this);
-		
+		// GOOD CODE RIGHT HERE
 		
 	}
 }
