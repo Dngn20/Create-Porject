@@ -30,17 +30,23 @@ public class CreatePanel extends JPanel
 		this.titleLabel = new JLabel("SIMPLE GAMES");
 		
 		
-	
+		
+		
+		setupActionListeners();
 		setupPanel();
 		setupLayout();
 		
 	}
 	
+	private void setupActionListeners()
+	{
+		
+	}
 	
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setBackground(Color.GREEN);
+		this.setBackground(Color.CYAN);
 		this.setPreferredSize(new Dimension(900, 600));
 		
 		gameLabel.setVerticalTextPosition(JLabel.TOP);
@@ -49,6 +55,7 @@ public class CreatePanel extends JPanel
 		titleLabel.setFont(new Font("Malayalam MN", Font.PLAIN, 50));
 		
 		this.add(titleLabel);
+		this.add(gameLabel);
 		this.add(TTTButton);
 		this.add(RPSButton);
 		this.add(OOEButton);
@@ -58,26 +65,23 @@ public class CreatePanel extends JPanel
 
 	public void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.NORTH, TTTButton, 265, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, TTTButton, 53, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, RPSButton, 0, SpringLayout.NORTH, TTTButton);
-		baseLayout.putConstraint(SpringLayout.WEST, RPSButton, 90, SpringLayout.EAST, TTTButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, OOEButton, 0, SpringLayout.NORTH, TTTButton);
-		baseLayout.putConstraint(SpringLayout.WEST, OOEButton, 99, SpringLayout.EAST, RPSButton);
-		baseLayout.putConstraint(SpringLayout.WEST, gameLabel, 265, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, gameLabel, -25, SpringLayout.NORTH, RPSButton);
-		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 222, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -34, SpringLayout.NORTH, gameLabel);
+		
 		baseLayout.putConstraint(SpringLayout.WEST, TTTButton, 32, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, TTTButton, -269, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, RPSButton, 0, SpringLayout.NORTH, TTTButton);
-		baseLayout.putConstraint(SpringLayout.WEST, RPSButton, 114, SpringLayout.EAST, TTTButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, OOEButton, 0, SpringLayout.NORTH, TTTButton);
-		baseLayout.putConstraint(SpringLayout.EAST, OOEButton, -85, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, gameLabel, 268, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -346, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, gameLabel, 5, SpringLayout.SOUTH, titleLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, gameLabel, 261, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, gameLabel, -6, SpringLayout.NORTH, RPSButton);
 		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 228, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, OOEButton, 19, SpringLayout.NORTH, TTTButton);
+		baseLayout.putConstraint(SpringLayout.WEST, OOEButton, 624, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, OOEButton, -85, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, RPSButton, 19, SpringLayout.NORTH, TTTButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, TTTButton, 278, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, TTTButton, 32, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, TTTButton, -256, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, RPSButton, 284, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, RPSButton, 114, SpringLayout.EAST, TTTButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, OOEButton, 284, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, RPSButton, -100, SpringLayout.WEST, OOEButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -346, SpringLayout.SOUTH, this);
 	}
 
 
