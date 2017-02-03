@@ -20,6 +20,7 @@ public class OddsOrEvensPanel extends JPanel
 	
 	
 	
+	
 	public OddsOrEvensPanel(GameController baseController)
 	{
 		super();
