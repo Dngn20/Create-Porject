@@ -11,8 +11,8 @@ import javax.swing.SpringLayout;
 
 import create.controller.GameController;
 
-public class Temp extends 
-public class 
+public class Temp extends JPanel
+{
 	
 	
 	

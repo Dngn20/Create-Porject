@@ -1,26 +1,27 @@
 package create.view;
 
 import javax.swing.JFrame;
+import create.view.CreatePanel;
 import create.controller.GameController;
 import java.awt.Dimension;
 
 public class CreateFrame extends JFrame
 {
 	private GameController baseController;
-	private CreatePanel appPanel;
+	private CreatePanel CreatePanel;
 
 	public CreateFrame(GameController baseController)
 	{
 		super();
 		this.baseController = baseController;
-		this.appPanel = new CreatePanel(baseController);
+		this.CreatePanel = new CreatePanel(baseController);
 		
 		setupFrame();
 	}
 	
 	private void setupFrame()
 	{
-		this.setContentPane(appPanel);
+		this.setContentPane(CreatePanel);
 		this.setSize(new Dimension (900, 600));
 		this.setTitle("The Simple Games");
 		this.setSize(new Dimension(900, 600));
@@ -28,5 +29,11 @@ public class CreateFrame extends JFrame
 		this.setVisible(true);
 		// GOOD CODE RIGHT HERE
 	}
-
+	
+	public void setTicTacToePanel(CreatePanel CreatePanel)
+	{
+		this.CreatePanel = CreatePanel;
+	}
+	
+	
 }

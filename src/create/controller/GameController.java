@@ -7,6 +7,7 @@ import create.model.*;
 public class GameController 
 {
 	private CreateFrame baseFrame;
+	private TicTacToe [][] ticTacToe; 
 	
 
 	public void start()

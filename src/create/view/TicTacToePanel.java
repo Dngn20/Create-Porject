@@ -28,6 +28,7 @@ public class TicTacToePanel extends JPanel
 	private JTextField colInput;
 	private JTable TTTTable;
 	private JScrollPane TTTPane;
+	private JLabel OXLabel;
 	
 	
 	//OPENING OF THE PROGRAM IS NICE BUT THE BLUE IS A LITTLE MUCH I THINK...
@@ -38,13 +39,17 @@ public class TicTacToePanel extends JPanel
 		super();
 		
 		this.baseController = baseController;
+		this.OXLabel = new JLabel("O and X only");
 		this.baseLayout = new SpringLayout();
 		this.rowLabel = new JLabel("Rows");
 		this.columnLabel = new JLabel("Columns");
+		baseLayout.putConstraint(SpringLayout.SOUTH, OXLabel, -43, SpringLayout.NORTH, columnLabel);
 		this.rowInput = new JTextField(10);
 		this.colInput = new JTextField(10);
 		this.enter = new JButton("Enter");
+		baseLayout.putConstraint(SpringLayout.EAST, OXLabel, 0, SpringLayout.EAST, enter);
 		this.titleLabel= new JLabel("tIctAcToE");
+		
 		
 		// GOOD CODE RIGHT HERE
 		setupListeners();
@@ -53,11 +58,7 @@ public class TicTacToePanel extends JPanel
 		setupLayout();
 	}		// GOOD CODE RIGHT HERE
 	
-	private void setupListeners()
-	{
-		// ARN'T THE SETUP LISTENERS SUPPOSED TO BE AFTER THE SETUP PANEL AND LAYOUT?
-		// THE BUTTONS DON'T DO ANYTHING YET
-	}
+	
 	// GOOD CODE RIGHT HERE
 	private void setupPanel()
 	{
@@ -67,6 +68,7 @@ public class TicTacToePanel extends JPanel
 		
 		titleLabel.setFont(new Font("Malayalam MN", Font.PLAIN, 50));
 		
+		this.add(OXLabel);
 		this.add(titleLabel);
 		this.add(enter);		// GOOD CODE RIGHT HERE
 		this.add(rowLabel);
@@ -98,6 +100,10 @@ public class TicTacToePanel extends JPanel
 		
 	}
 	
+	private void setupListeners()
+	{
+		
+	}
 
 
 }
