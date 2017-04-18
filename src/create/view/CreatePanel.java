@@ -2,12 +2,18 @@ package create.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.*;
+
 import create.controller.GameController;
 
 
 public class CreatePanel extends JPanel
 {
+	
 	private GameController baseController;
+	private CreateFrame baseFrame;
 	private JButton TTTButton;
 	private JLabel gameLabel;
 	private SpringLayout baseLayout;
@@ -23,8 +29,15 @@ public class CreatePanel extends JPanel
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
 		this.TTTButton = new JButton("Tic-Tac-Toe Game");
+		
 		this.gameLabel = new JLabel("Needs 2 players to play");
+		
+		
+		
 		this.titleLabel = new JLabel("Tic-Tac-Toe");
+		
+		
+		
 		
 		setupActionListeners();
 		setupPanel();
@@ -34,13 +47,22 @@ public class CreatePanel extends JPanel
 	
 	private void setupActionListeners()
 	{
-		
+		TTTButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent Click)
+			{
+				baseFrame = baseController.getBaseFrame();
+				baseFrame.switchTTTPanel();
+			}
+			
+			
+		});
 	}
 	
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setBackground(Color.CYAN);
+		this.setBackground(Color.darkGray);
 		this.setPreferredSize(new Dimension(900, 600));
 		
 		gameLabel.setVerticalTextPosition(JLabel.TOP);
@@ -57,12 +79,12 @@ public class CreatePanel extends JPanel
 
 	public void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.NORTH, TTTButton, 314, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, TTTButton, 327, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, gameLabel, 360, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, gameLabel, 14, SpringLayout.SOUTH, titleLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 259, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -60, SpringLayout.NORTH, TTTButton);
+		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 271, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, TTTButton, 328, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -347, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, TTTButton, 45, SpringLayout.SOUTH, titleLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, gameLabel, 6, SpringLayout.SOUTH, titleLabel);
+		baseLayout.putConstraint(SpringLayout.EAST, gameLabel, 0, SpringLayout.EAST, TTTButton);
 	}
 
 

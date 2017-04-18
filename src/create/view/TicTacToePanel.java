@@ -3,6 +3,8 @@ package create.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,6 +21,7 @@ import create.controller.GameController;
 public class TicTacToePanel extends JPanel
 {
 	private SpringLayout baseLayout;
+	private CreateFrame baseFrame;
 	private GameController baseController;
 	private JLabel titleLabel;
 	private JLabel rowLabel;
@@ -29,6 +32,7 @@ public class TicTacToePanel extends JPanel
 	private JTable TTTTable;
 	private JScrollPane TTTPane;
 	private JLabel OXLabel;
+	private JButton backButton;
 	
 	
 	//OPENING OF THE PROGRAM IS NICE BUT THE BLUE IS A LITTLE MUCH I THINK...
@@ -37,18 +41,16 @@ public class TicTacToePanel extends JPanel
 	public TicTacToePanel(GameController baseController)
 	{
 		super();
-		
+		this.backButton = new JButton("Back");
 		this.baseController = baseController;
 		this.OXLabel = new JLabel("O and X only");
 		this.baseLayout = new SpringLayout();
 		this.rowLabel = new JLabel("Rows");
 		this.columnLabel = new JLabel("Columns");
-		baseLayout.putConstraint(SpringLayout.SOUTH, OXLabel, -43, SpringLayout.NORTH, columnLabel);
 		this.rowInput = new JTextField(10);
 		this.colInput = new JTextField(10);
 		this.enter = new JButton("Enter");
-		baseLayout.putConstraint(SpringLayout.EAST, OXLabel, 0, SpringLayout.EAST, enter);
-		this.titleLabel= new JLabel("tIctAcToE");
+		this.titleLabel= new JLabel("TicTacToe");
 		
 		
 		// GOOD CODE RIGHT HERE
@@ -68,6 +70,7 @@ public class TicTacToePanel extends JPanel
 		
 		titleLabel.setFont(new Font("Malayalam MN", Font.PLAIN, 50));
 		
+		this.add(backButton);
 		this.add(OXLabel);
 		this.add(titleLabel);
 		this.add(enter);		// GOOD CODE RIGHT HERE
@@ -93,6 +96,10 @@ public class TicTacToePanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, columnLabel, 120, SpringLayout.SOUTH, titleLabel);		// GOOD CODE RIGHT HERE
 		baseLayout.putConstraint(SpringLayout.NORTH, titleLabel, 34, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, OXLabel, -43, SpringLayout.NORTH, columnLabel);
+		baseLayout.putConstraint(SpringLayout.EAST, OXLabel, 0, SpringLayout.EAST, enter);
+		baseLayout.putConstraint(SpringLayout.NORTH, backButton, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, backButton, -10, SpringLayout.EAST, this);
 	}
 	// GOOD CODE RIGHT HERE
 	public void setupTable()
@@ -102,7 +109,16 @@ public class TicTacToePanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		backButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent Click)
+			{
+				baseFrame = baseController.getBaseFrame();
+				baseFrame.switchMainPanel();
+			}
+			
+			
+		});
 	}
 
 

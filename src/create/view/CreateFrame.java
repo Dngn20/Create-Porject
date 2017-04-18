@@ -9,13 +9,16 @@ public class CreateFrame extends JFrame
 {
 	private GameController baseController;
 	private CreatePanel CreatePanel;
+	private TicTacToePanel ticTacToePanel;
+	private CreatePanel createPanel;
 
 	public CreateFrame(GameController baseController)
 	{
 		super();
 		this.baseController = baseController;
 		this.CreatePanel = new CreatePanel(baseController);
-		
+		this.ticTacToePanel = new TicTacToePanel(baseController);
+		this.createPanel = new CreatePanel(baseController);
 		setupFrame();
 	}
 	
@@ -30,10 +33,41 @@ public class CreateFrame extends JFrame
 		// GOOD CODE RIGHT HERE
 	}
 	
+	public CreatePanel getcreatePanel()
+	{
+		return createPanel;
+	}
+	
+	public TicTacToePanel getTicTacToePanel()
+	{
+		return ticTacToePanel;
+	}
+	
+	public void setCreatePanel(CreatePanel CreatePanel)
+	{
+		this.CreatePanel = CreatePanel;
+	}
+	
 	public void setTicTacToePanel(CreatePanel CreatePanel)
 	{
 		this.CreatePanel = CreatePanel;
 	}
 	
+	public void switchMainPanel()
+	{
+		this.getContentPane();
+		this.setContentPane(CreatePanel);
+		this.validate();
+		this.repaint();
+		
+	}
+	
+	public void switchTTTPanel()
+	{
+		this.getContentPane();
+		this.setContentPane(ticTacToePanel);
+		this.validate();
+		this.repaint();
+	}
 	
 }
