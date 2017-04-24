@@ -1,4 +1,4 @@
-package create.view;
+/*package create.view;
 
 import javax.swing.JFrame;
 import create.view.CreatePanel;
@@ -71,3 +71,4 @@ public class CreateFrame extends JFrame
 	}
 	
 }
+*/

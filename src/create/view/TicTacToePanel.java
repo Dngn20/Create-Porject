@@ -1,6 +1,7 @@
-package create.view;
+/*package create.view;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import create.controller.GameController;
 
@@ -29,12 +31,11 @@ public class TicTacToePanel extends JPanel
 	private JTextField rowInput;
 	private JButton enter;
 	private JTextField colInput;
-	private JTable TTTTable;
-	private JScrollPane TTTPane;
+	
 	private JLabel OXLabel;
 	private JButton backButton;
-	
-	
+	private JTable gameTable;
+	private JScrollPane pane;
 	//OPENING OF THE PROGRAM IS NICE BUT THE BLUE IS A LITTLE MUCH I THINK...
 	
 	
@@ -69,6 +70,8 @@ public class TicTacToePanel extends JPanel
 		this.setBackground(Color.darkGray);
 		
 		titleLabel.setFont(new Font("Malayalam MN", Font.PLAIN, 50));
+		
+	
 		
 		this.add(backButton);
 		this.add(OXLabel);
@@ -105,7 +108,20 @@ public class TicTacToePanel extends JPanel
 	public void setupTable()
 	{
 		
+		char [] col = {' ',' ',' '};
+		char [] row = {' ',' ',' '};
+		
+		char [][] board = {{' ',' ', ' '},
+		{' ', ' ', ' '},{' ', ' ', ' '}}; 
+		
+		gameTable = new JTable();
+		gameTable.setPreferredScrollableViewportSize(new Dimension(300, 300));
+		pane = new JScrollPane(gameTable);
+		
+		this.add(gameTable);
+		
 	}
+	
 	
 	private void setupListeners()
 	{
@@ -124,3 +140,4 @@ public class TicTacToePanel extends JPanel
 
 }
 
+*/

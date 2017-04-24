@@ -1,4 +1,4 @@
-package create.view;
+/*package create.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,11 +29,7 @@ public class CreatePanel extends JPanel
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
 		this.TTTButton = new JButton("Tic-Tac-Toe Game");
-		
 		this.gameLabel = new JLabel("Needs 2 players to play");
-		
-		
-		
 		this.titleLabel = new JLabel("Tic-Tac-Toe");
 		
 		
@@ -92,3 +88,4 @@ public class CreatePanel extends JPanel
 
 
 }
+*/
