@@ -13,11 +13,6 @@ import create.controller.GameController;
 
 public class Temp extends JPanel
 {
-	
-	
-	
-	
-	
 	public CreatePanel(GameController baseController)
 	{
 		super();
