@@ -53,5 +53,8 @@ public class GameController
 	/*public CreateFrame getBaseFrame()
 	{
 		return baseFrame;
+<<<<<<< HEAD
 	}*/
+
 }
+
