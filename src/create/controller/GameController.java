@@ -27,9 +27,9 @@ public class GameController
         ticTacToe.play();
 	}
 	
-	public boolean getHasWinner()
+	public boolean getWinner()
 	{
-		return ticTacToe.hasWinner(rowUsed, colUsed);
+		return ticTacToe.isWinner(rowUsed, colUsed);
 	}
 	
 	public boolean getIsPositionEmpty()

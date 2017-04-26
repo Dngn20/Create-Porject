@@ -12,22 +12,22 @@ public class TicTacToe
 	    private void boardArray() 
 	    {
 	        board = new char[Number_Row_Col][Number_Row_Col];
-	        for (int i = 0; i < board.length; i++) 
+	        for (int row = 0; row < board.length; row++) 
 	        {
-	            for (int j = 0; j < board[i].length; j++) 
+	            for (int col = 0; col < board[row].length; col++) 
 	            {
-	                board[i][j] = ' ';
+	                board[row][col] = ' ';
 	            }
 	        }
 	    }    
 	    
 	   
-	    public boolean hasWinner(int rowUsed, int colUsed) 
+	    public boolean isWinner(int rowUsed, int colUsed) 
 	    {
 	    	boolean foundWinner = true;
-	    	for (int i = 0; i < board[rowUsed].length; i++) 
+	    	for (int row = 0; row < board[rowUsed].length; row++) 
 	    	{
-	    		if (board[rowUsed][i] != board[rowUsed][colUsed]) 
+	    		if (board[rowUsed][row] != board[rowUsed][colUsed]) 
 	    		{
 	    			foundWinner = false;
 	    		}
@@ -65,7 +65,7 @@ public class TicTacToe
 			if(foundWinner) return true;
 			
 			return false;
-		    }
+		   }
 	   
 	    public  boolean isBoardFull() 
 	    {
@@ -126,24 +126,23 @@ public class TicTacToe
 	    {
 	    	boardArray();
 	        
-	        
 	        boolean noWinner = true;
 	        Scanner keyboard = new Scanner(System.in);
 
-	        
-	        while(noWinner){
-	        printBoard(); 
+	        while(noWinner)
+	        {
+	        	printBoard(); 
 	            
-	        int usedRow;
-	        int usedCol;
+	        	int usedRow;
+	        	int usedCol;
 	           
-	        System.out.println("Player " + markFor[currentPlayer] +": It is your turn.");
-	        System.out.println("Please enter row between 0 and "+ (Number_Row_Col-1)+":");
-	        usedRow = keyboard.nextInt();
-	        System.out.println("Please enter column between 0 and "+ (Number_Row_Col-1)+":");
-	        usedCol = keyboard.nextInt();
-	        boolean isValidRow = false;
-	        boolean isValidCol = false;
+	        	System.out.println("Player " + markFor[currentPlayer] +": It is your turn.");
+	        	System.out.println("Please enter row between 0 and "+ (Number_Row_Col-1)+":");
+	        	usedRow = keyboard.nextInt();
+	        	System.out.println("Please enter column between 0 and "+ (Number_Row_Col-1)+":");
+	        	usedCol = keyboard.nextInt();
+	        	boolean isValidRow = false;
+	        	boolean isValidCol = false;
 	            
 	        	while(!isValidRow || !isValidCol) 
 	            {
@@ -188,7 +187,7 @@ public class TicTacToe
 	            }
 	            
 	            setPosition(usedRow,usedCol);
-	            if (hasWinner(usedRow,usedCol)) 
+	            if (isWinner(usedRow,usedCol)) 
 	            {
 	                System.out.println("Congratulations, Player " + markFor[currentPlayer]);
 	                printBoard();
