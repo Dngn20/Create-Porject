@@ -2,6 +2,8 @@ package create.model;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class TicTacToe 
 {
 	    private static final int Number_Row_Col = 3;
@@ -135,18 +137,19 @@ public class TicTacToe
 	            
 	        	int usedRow;
 	        	int usedCol;
-	           
-	        	System.out.println("Player " + markFor[currentPlayer] +": It is your turn.");
-	        	System.out.println("Please enter row between 0 and "+ (Number_Row_Col-1)+":");
-	        	usedRow = keyboard.nextInt();
-	        	System.out.println("Please enter column between 0 and "+ (Number_Row_Col-1)+":");
-	        	usedCol = keyboard.nextInt();
+	        	int i;
+	        	
+	            System.out.println("Player " + markFor[currentPlayer] +": It is your turn.");
+	            System.out.println("Please enter row between 0 and "+ (Number_Row_Col-1)+":");
+	            usedRow = keyboard.nextInt();
+	            System.out.println("Please enter column between 0 and "+ (Number_Row_Col-1)+":");
+	            usedCol = keyboard.nextInt();
+	            
 	        	boolean isValidRow = false;
 	        	boolean isValidCol = false;
 	            
 	        	while(!isValidRow || !isValidCol) 
 	            {
-	               
 	                if (usedRow < 0 || usedRow >= Number_Row_Col) 
 	                {
 	                    System.out.println("Bad row. Rows need to be between 0" + " and "+(Number_Row_Col-1)+".");
